@@ -1,0 +1,60 @@
+{
+  "name": "tmc-frontend",
+  "version": "1.0.0",
+  "description": "The Matching Company - Invoice Processing Dashboard",
+  "private": true,
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@stripe/react-stripe-js": "^2.9.0",
+    "@stripe/stripe-js": "^3.5.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "5.0.1",
+    "tailwind-merge": "^2.2.1",
+    "@elevenlabs/react": "^0.7.1",
+    "motion": "^11.11.17",
+    
+    "streamdown": "^1.0.0"
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "autoprefixer": "^10.4.18",
+    "dotenv": "^16.4.5",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000",
+  "overrides": {
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.35",
+    "svgo": "^2.8.0",
+    "webpack-dev-server": "^4.15.2"
+  }
+}

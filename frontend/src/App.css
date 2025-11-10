@@ -1,0 +1,5 @@
+/* App container - no center alignment */
+.App {
+  min-height: 100vh;
+  background: #FFFFFF;
+}

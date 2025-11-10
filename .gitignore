@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+tmcv1/
+
+# Node / React
+frontend/node_modules/
+frontend/.env.local
+frontend/.env.*.local
+frontend/.parcel-cache/
+frontend/.next/
+frontend/build/
+frontend/coverage/
+
+# Local data, outputs and caches
+invoices/
+.cache/
+.tmp/
+*.log
+
+# System / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets
+.env
+frontend/.env
+.claude/
