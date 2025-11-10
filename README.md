@@ -68,6 +68,11 @@ The accuracy of Landing AI's extraction is what makes the entire automated workf
 
 Landing AI has made enterprise invoice processing automatable. That is the foundation this project builds on.
 
+## Gallery
+### Dashboard Overview
+<img width="1917" height="967" alt="Image" src="https://github.com/user-attachments/assets/379dd774-3ce8-4e3d-94b6-1b4cbf567c95" />
+
+
 ## Architecture
 
 ### Backend (Python/Flask)
