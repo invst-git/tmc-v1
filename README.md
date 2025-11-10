@@ -71,7 +71,18 @@ Landing AI has made enterprise invoice processing automatable. That is the found
 ## Gallery
 ### Dashboard Overview
 <img width="1917" height="967" alt="Image" src="https://github.com/user-attachments/assets/379dd774-3ce8-4e3d-94b6-1b4cbf567c95" />
-
+### Vendors
+<img width="1917" height="970" alt="Image" src="https://github.com/user-attachments/assets/2c99ad29-c991-4c5c-ba7b-22b844de1838" />
+### Invoice - As a PDF
+<img width="718" height="858" alt="Image" src="https://github.com/user-attachments/assets/eb06e223-2007-40ab-8ce9-7bd2149f6c01" />
+### Invoice - Post OCR (Shoutout to LandingAI's DPT2)
+<img width="1914" height="967" alt="Image" src="https://github.com/user-attachments/assets/a64c30df-fe82-4a6a-816f-5a24182979ff" />
+### Chat Interface (Vendor Specific - Invoice & PO tagged)
+<img width="1919" height="971" alt="Image" src="https://github.com/user-attachments/assets/dd9fb1df-bb45-4cc0-94b4-8aa16b389f50" />
+### Exception Invoices (Flagged when there is no matching PO - likely fraud)
+<img width="1919" height="971" alt="Image" src="https://github.com/user-attachments/assets/9492062b-67a6-44dc-afe7-55dd61c77803" />
+### Payments (Once automatched - approved for payment)
+<img width="1919" height="967" alt="Image" src="https://github.com/user-attachments/assets/4203a443-a6ee-4526-997b-e4609278763a" />
 
 ## Architecture
 
