@@ -280,28 +280,29 @@ Exception invoices appear in the dashboard and can be filtered by status:
 
 Select invoices for payment in the vendor or payment interface. The system groups invoices by currency and creates a Stripe payment intent. After customer approval and payment completion, invoice status updates to `paid`.
 
-## Project Structure
+```text
+# Project Structure
 
 tmc-v1/
-├── app.py # Main Flask application
-├── ocr_landingai.py # Landing AI OCR integration
-├── invoice_schema.py # Pydantic schema for invoice extraction
-├── invoice_db.py # Invoice database operations
-├── po_matching.py # Purchase order matching logic
-├── email_client.py # Email intake and processing
-├── vendor_db.py # Vendor management
-├── payments.py # Stripe payment integration
-├── chat_db.py # Chat persistence
-├── chat_llm.py # Claude chat integration
-├── frontend/ # React web interface
-│ ├── src/
-│ │ ├── pages/ # Main application pages
-│ │ ├── components/ # Reusable UI components
-│ │ └── lib/ # Utilities and API client
-│ └── package.json
-└── requirements.txt # Python dependencies
+├── app.py                  # Main Flask application
+├── ocr_landingai.py        # Landing AI OCR integration
+├── invoice_schema.py       # Pydantic schema for invoice extraction
+├── invoice_db.py           # Invoice database operations
+├── po_matching.py          # Purchase order matching logic
+├── email_client.py         # Email intake and processing
+├── vendor_db.py            # Vendor management
+├── payments.py             # Stripe payment integration
+├── chat_db.py              # Chat persistence
+├── chat_llm.py             # Claude chat integration
+├── frontend/               # React web interface
+│   ├── src/
+│   │   ├── pages/          # Main application pages
+│   │   ├── components/     # Reusable UI components
+│   │   └── lib/            # Utilities and API client
+│   └── package.json
+└── requirements.txt        # Python dependencies
+```
 
-text
 
 ## Development
 
