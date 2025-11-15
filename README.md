@@ -312,14 +312,11 @@ Start the backend:
 
 python app.py
 
-text
-
 Start the frontend:
 
 cd frontend
 npm start
 
-text
 
 The application runs on `http://localhost:3000` with API backend on `http://localhost:5000`.
 
