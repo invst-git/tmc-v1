@@ -188,14 +188,59 @@ export const cancelPayment = async ({ paymentIntentId }) => {
   });
   return await handleResponse(response);
 };
-
-// Actions wired to existing Flask HTML endpoints
-// Trigger email run; then pull logs from index page
-export const runNow = async () => {
-  await fetch('/run-now', { method: 'POST' });
-  const html = await (await fetch('/')).text();
-  return extractLogsFromHtml(html);
+export const getRunStatus = async () => {
+  const response = await fetch("/api/run/status");
+  return await handleResponse(response);
 };
+
+
+export const runNow = async (options = {}) => {
+  const {
+    wait = false,
+    onUpdate,
+    intervalMs = 1000,
+    timeoutMs = 120000,
+  } = options;
+
+  let pre = null;
+  try {
+    pre = await getRunStatus();
+  } catch (_) {}
+
+  if (!pre || !pre.isRunning) {
+    await fetch('/run-now', { method: 'POST' });
+  }
+
+  if (!wait) {
+    const html = await (await fetch('/')).text();
+    return extractLogsFromHtml(html);
+  }
+
+  const start = Date.now();
+  let lastLogs = '';
+
+  while (Date.now() - start < timeoutMs) {
+    try {
+      const status = await getRunStatus();
+
+      if (typeof onUpdate === 'function') {
+        onUpdate(status.lastRunResult || '');
+      }
+
+      if (!status.isRunning) {
+        return status.lastRunResult || '';
+      }
+
+      lastLogs = status.lastRunResult || lastLogs;
+    } catch (_) {
+    }
+
+    await new Promise(r => setTimeout(r, intervalMs));
+  }
+
+  return lastLogs;
+};
+
 
 // Upload invoice via /upload HTML endpoint; returns logs extracted from HTML
 export const uploadInvoice = async (vendorId, file) => {

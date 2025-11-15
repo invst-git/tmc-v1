@@ -65,12 +65,7 @@ def save_invoice_to_db(fields_json_path:str,file_path:str,from_email:Optional[st
                     row=cur.fetchone()
                     if row:
                         vendor_id=row[0]
-                if not vendor_id and supplier_name:
-                    cur.execute(
-                        "insert into vendors(name,tax_id,address,contact_info) values(%s,%s,%s,%s) returning id",
-                        (supplier_name,supplier_tax_id,supplier_address,from_email)
-                    )
-                    vendor_id=cur.fetchone()[0]
+                # Do not auto-create vendors on ingest; leave vendor_id as None
             cur.execute(
                 """
                 insert into invoices(

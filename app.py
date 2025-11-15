@@ -157,6 +157,19 @@ def run_now():
         t.start()
     return redirect(url_for("index"))
 
+@app.route("/api/run/status", methods=["GET"])
+def api_run_status():
+    """Return current background run status and last logs for the dashboard."""
+    try:
+        return jsonify({
+            "isRunning": bool(is_running),
+            "lastRunAt": last_run_at,
+            "lastRunResult": last_run_result,
+            "intervalSeconds": CHECK_INTERVAL_SECONDS,
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route("/upload",methods=["GET","POST"])
 def upload_page():
     vendors=get_vendors()

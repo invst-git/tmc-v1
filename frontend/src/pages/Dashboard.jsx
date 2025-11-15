@@ -100,7 +100,7 @@ const Dashboard = () => {
       setRunInProgress(true);
       setShowRunLogs(true);
       setRunLogs('');
-      const logsText = await runNow();
+      const logsText = await runNow({ wait: true, onUpdate: setRunLogs });
       setRunLogs(logsText || 'Run completed.');
       await refreshData();
     } catch (err) {
@@ -159,7 +159,7 @@ const Dashboard = () => {
               disabled={runInProgress}
               className="px-4 py-2 border border-black rounded-full text-sm font-medium text-black hover:bg-gray-50 disabled:opacity-60"
             >
-              {runInProgress ? 'Checking inbox…' : 'Check inbox now'}
+              {runInProgress ? 'Checking inbox...' : 'Check inbox now'}
             </button>
             <button
               onClick={() => setUploadOpen(true)}
@@ -197,7 +197,7 @@ const Dashboard = () => {
             {runLogs ? (
               <pre className="text-xs text-gray-700 whitespace-pre-wrap">{runLogs}</pre>
             ) : (
-              <p className="text-xs text-gray-500">Waiting for logs…</p>
+              <p className="text-xs text-gray-500">Waiting for logs...</p>
             )}
           </div>
         )}
